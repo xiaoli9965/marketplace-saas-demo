@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: 'qingcloud-saas-app'
+  resources:
+    static-locations: classpath:/static/,classpath:/public/
+  datasource:
+    username: postgres
+    password: saasapp
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:35432/saas
+    hikari:
+      minimum-idle: 10
+      idle-timeout: 600000
+      maximum-pool-size: 100
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+logging:
+  level:
+    com.qingcloud.saas: INFO
+
+saas:
+  host: "http://139.198.181.88"
