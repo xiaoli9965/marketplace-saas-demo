@@ -4,8 +4,8 @@ const BASE_URI = '/api/thirdApp';
 
 export async function appPage(params?: Record<string, any>) {
   return request<R.Ret>(`${BASE_URI}/list`, {
-    method: 'GET',
-    params,
+    method: 'POST',
+    data:params,
   });
 }
 

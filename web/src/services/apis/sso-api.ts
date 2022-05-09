@@ -13,6 +13,6 @@ export async function authUrlLong(data?: Record<string, any>) {
 export async function requestQingcCloudSso(path, opt: any) {
   return request<R.Ret>(path, {
     method: 'POST',
-    ...opt
+    ...opt,
   });
 }

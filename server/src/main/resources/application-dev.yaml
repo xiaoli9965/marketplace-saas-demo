@@ -4,3 +4,6 @@ logging:
 
 saas:
   host: "http://localhost:8000"
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:35432/saas

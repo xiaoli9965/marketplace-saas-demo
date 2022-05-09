@@ -12,7 +12,7 @@ spring:
     password: saasapp
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:35432/saas
+    url: jdbc:postgresql://localhost:25432/saas
     hikari:
       minimum-idle: 10
       idle-timeout: 600000
@@ -25,5 +25,15 @@ logging:
   level:
     com.qingcloud.saas: INFO
 
+# swagger 配置
+springdoc:
+  api-docs:
+    enabled: true
+  cache:
+    disabled: true
+  swagger-ui:
+#    path: /swagger-ui/api-docs.html
+    path: /app-swagger
+
 saas:
-  host: "http://139.198.181.88"
+  host: "http://139.198.187.177"

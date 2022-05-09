@@ -59,7 +59,6 @@ const SsoAuthUrl: React.FC = (props) => {
       setErrmsg("无效的跳转链接")
       return
     }
-
     const resp = await getApp(queryParams.isv_ins_id);
     if (resp.code !== 200) {
       setErrmsg(resp.message)
@@ -84,6 +83,7 @@ const SsoAuthUrl: React.FC = (props) => {
 
     setOkmsg("请求token中...")
     // eslint-disable-next-line @typescript-eslint/no-shadow
+
     const qcToken: QcTokenRet = await requestQingcCloudSso(cloudInfo.sso_server + '/sso/token/', opt)
     setTokenRet(qcToken)
     if (qcToken.ret_code !== 0) {
@@ -137,7 +137,7 @@ const SsoAuthUrl: React.FC = (props) => {
       <br/>
       <Space wrap>
         <Card size="small" title="请求参数">
-          <ProFormField width={400} ignoreFormItem valueType="jsonCode" text={JSON.stringify(queryParams)} mode="read"/>
+          <ProFormField width={400} ignoreFormItem valueType="jsonCode" text={JSON.stringify(queryParams.state)} mode="read"/>
         </Card>
         {
           !tokenRet ? undefined :

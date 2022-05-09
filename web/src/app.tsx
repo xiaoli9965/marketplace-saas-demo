@@ -103,7 +103,6 @@ const authHeaderInterceptor = (url: string, options: any) => {
 
 export const request: RequestConfig = {
   // requestInterceptors: [authHeaderInterceptor],
-
   errorHandler: (error: any) => {
     const {response} = error;
 

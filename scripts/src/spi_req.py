@@ -124,23 +124,25 @@ mock = {
         "action": "CreateAppInstance",
         "user_id": "usr-rymOTvEl",
         "app_id": APP_ID,
-        "spec": base64.b64encode("alex 套餐"),
+        "spec": base64.b64encode("alex 规格1"),
+        "spec_package": base64.b64encode("alex 套餐1"),
         "period": '1_day',
         "cloud_info": base64.b64encode(str(json.dumps({
             "sso_server": "http://sso.qingcloud.com",
             "api_server": "http://api.qingcloud.com:7777"
         }))),
-        "debug": True
+        "debug": True,
+        "order_id": '123',
     },
     'RenewAppInstance': {
         "action": "RenewAppInstance",
         "spec": base64.b64encode("alex 高性能"),
         "period": '10_day',
-        "instance_id": 's-i-1kpw50kg7vqm',
+        "instance_id": 's-i-evosmm0mt7xa',
     },
     'UpgradeAppInstance': {
         "action": "UpgradeAppInstance",
-        "instance_id": 's-i-i1dwrj3ize5q',
+        "instance_id": 's-i-y4xaztwigeok',
         "spec": base64.b64encode("alex618促销适用"),
         "period": '999_day',
     },
@@ -159,4 +161,4 @@ mock = {
 
 
 if __name__ == '__main__':
-    __request(URL, APP_KEY, mock['CreateAppInstance'], False)
+    __request(URL, APP_KEY, mock['RenewAppInstance'], False)
